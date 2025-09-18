@@ -1,0 +1,84 @@
+.resume-container {
+  max-width: 900px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: #fff;
+  padding: 18px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.auth-btn {
+  background: #0073e6;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.auth-btn:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.small-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.otp-box {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.note {
+  color: #b33;
+  margin-top: 8px;
+}
+
+.preview-card {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* ✅ custom scrollbars */
+.preview-card::-webkit-scrollbar {
+  width: 8px;
+}
+.preview-card::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.preview-card::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.resume-preview {
+  font-size: 14px;
+  line-height: 1.6;
+}
