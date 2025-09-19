@@ -5,7 +5,7 @@ import "./Task4Resume.css"; // ✅ import new css
 
 const RAZORPAY_KEY_PLACEHOLDER = "YOUR_RAZORPAY_KEY"; 
 const PRICE_RUPEES = 50;
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://intershala-backend-m43m.onrender.com";
 
 const Task4Resume: React.FC = () => {
   const { user, resumes, setResumes } = useAuth();

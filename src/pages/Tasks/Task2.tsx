@@ -19,7 +19,7 @@ const Task2: React.FC = () => {
 
     try {
       // 🔗 Call backend API to reset password (backend will generate & send)
-      await axios.post("http://localhost:5000/api/auth/forgot-password", {
+      await axios.post("https://intershala-backend-m43m.onrender.com/api/auth/forgot-password", {
         identifier: input, // email or phone
       });
 

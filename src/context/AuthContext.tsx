@@ -73,7 +73,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   // ---- Auth (backend) ----
   const login = async (email: string, password: string, otp?: string): Promise<boolean> => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch("https://intershala-backend-m43m.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password, otp }),
@@ -103,7 +103,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const googleLogin = async (credential: string): Promise<boolean> => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/google", {
+      const res = await fetch("https://intershala-backend-m43m.onrender.com/api/auth/google", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ credential }),
@@ -147,7 +147,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   // ---- OTP for French language switch ----
   const generateOtp = async (email: string): Promise<boolean> => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/language-otp/request", {
+      const res = await fetch("https://intershala-backend-m43m.onrender.com/api/auth/language-otp/request", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -171,7 +171,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const verifyOtp = async (otp: string): Promise<boolean> => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/language-otp/verify", {
+      const res = await fetch("https://intershala-backend-m43m.onrender.com/api/auth/language-otp/verify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

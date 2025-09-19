@@ -26,7 +26,7 @@ const Signup = () => {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
+      const res = await fetch("https://intershala-backend-m43m.onrender.com/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -74,7 +74,7 @@ const Signup = () => {
   // ✅ Google login handler
   const handleGoogleSuccess = async (credentialResponse: any) => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/google", {
+      const res = await fetch("https://intershala-backend-m43m.onrender.com/api/auth/google", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: credentialResponse.credential }),

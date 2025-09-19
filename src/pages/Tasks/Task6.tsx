@@ -18,7 +18,7 @@ const Task6: React.FC = () => {
     const fetchHistory = async () => {
       try {
         const token = localStorage.getItem("token"); // ✅ safe read
-        const response = await fetch("http://localhost:5000/api/auth/login-history", {
+        const response = await fetch("https://intershala-backend-m43m.onrender.com/api/auth/login-history", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
