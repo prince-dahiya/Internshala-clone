@@ -49,13 +49,13 @@ const Internships: React.FC = () => {
 
   const handleApply = (role: string, company: string) => {
     if (!user) {
-      alert(t("please login"));
+      alert(t("please login") as string);
       navigate("/login");
       return;
     }
 
     if (!subscription) {
-      alert(t("need subscription"));
+      alert(t("need subscription") as string);
       navigate("/subscription");
       return;
     }
@@ -63,7 +63,7 @@ const Internships: React.FC = () => {
     const now = new Date();
     const expiry = new Date(subscription.expiry);
     if (now > expiry) {
-      alert(t("subscription expired"));
+      alert(t("subscription expired") as string);
       navigate("/subscription");
       return;
     }
@@ -71,9 +71,8 @@ const Internships: React.FC = () => {
     const limitNum = getNumericLimit();
     const appliedNum = typeof subscription.applied === "number" ? subscription.applied : 0;
 
-    // ✅ fixed comparison
     if (appliedNum >= limitNum) {
-      alert(t("limit reached"));
+      alert(t("limit reached") as string);
       navigate("/subscription");
       return;
     }
@@ -94,11 +93,11 @@ const Internships: React.FC = () => {
     e.preventDefault();
 
     if (!selectedResume) {
-      alert(t("resume required"));
+      alert(t("resume required") as string);
       return;
     }
 
-    alert(t("application submitted"));
+    alert(t("application submitted") as string);
     setShowForm(false);
   };
 
@@ -129,25 +128,25 @@ const Internships: React.FC = () => {
 
   return (
     <div className="page-container">
-      <h2 className="section-title">{t("Internships")}</h2>
+      <h2 className="section-title">{t("Internships") as string}</h2>
       <button className="btn primary-btn" onClick={() => setShowPostForm(true)}>
-        {t("POST INTERNSHIP")}
+        {t("POST INTERNSHIP") as string}
       </button>
 
       <div className="internships-layout">
         {/* Filters */}
         <div className="filters">
-          <h3>{t("filters")}</h3>
-          <input type="text" placeholder={t("location")} value={filters.location} onChange={(e) => setFilters({ ...filters, location: e.target.value })} className="auth-input" />
+          <h3>{t("filters") as string}</h3>
+          <input type="text" placeholder={t("location") as string} value={filters.location} onChange={(e) => setFilters({ ...filters, location: e.target.value })} className="auth-input" />
           <select value={filters.type} onChange={(e) => setFilters({ ...filters, type: e.target.value })} className="auth-input">
-            <option value="">{t("all_types")}</option>
-            <option value="Remote">{t("remote")}</option>
-            <option value="Onsite">{t("onsite")}</option>
+            <option value="">{t("all_types") as string}</option>
+            <option value="Remote">{t("remote") as string}</option>
+            <option value="Onsite">{t("onsite") as string}</option>
           </select>
-          <input type="number" placeholder={t("min_stipend")} value={filters.minStipend} onChange={(e) => setFilters({ ...filters, minStipend: e.target.value })} className="auth-input" />
-          <input type="number" placeholder={t("max_stipend")} value={filters.maxStipend} onChange={(e) => setFilters({ ...filters, maxStipend: e.target.value })} className="auth-input" />
+          <input type="number" placeholder={t("min_stipend") as string} value={filters.minStipend} onChange={(e) => setFilters({ ...filters, minStipend: e.target.value })} className="auth-input" />
+          <input type="number" placeholder={t("max_stipend") as string} value={filters.maxStipend} onChange={(e) => setFilters({ ...filters, maxStipend: e.target.value })} className="auth-input" />
           <button className="btn" onClick={() => setFilters({ location: "", type: "", minStipend: "", maxStipend: "" })}>
-            {t("clear_filters")}
+            {t("clear_filters") as string}
           </button>
         </div>
 
@@ -156,13 +155,13 @@ const Internships: React.FC = () => {
           {filteredInternships.map((job, index) => (
             <div key={index} className="card">
               <h3>{job.title}</h3>
-              <p>{t("company")}: {job.company}</p>
-              <p>{t("location")}: {job.location}</p>
-              <p>{t("stipend")}: ₹{job.stipend}/month</p>
-              <p>{t("type")}: {job.type}</p>
-              <p><strong>{t("responsibilities")}:</strong> {job.responsibilities}</p>
+              <p>{t("company") as string}: {job.company}</p>
+              <p>{t("location") as string}: {job.location}</p>
+              <p>{t("stipend") as string}: ₹{job.stipend}/month</p>
+              <p>{t("type") as string}: {job.type}</p>
+              <p><strong>{t("responsibilities") as string}:</strong> {job.responsibilities}</p>
               <button className="btn apply-btn" onClick={() => handleApply(job.title, job.company)}>
-                {t("apply")}
+                {t("apply") as string}
               </button>
             </div>
           ))}
@@ -173,18 +172,18 @@ const Internships: React.FC = () => {
       {showForm && (
         <div className="modal-overlay">
           <div className="modal">
-            <h3>{t("apply for")} {selectedRole}</h3>
+            <h3>{t("apply for") as string} {selectedRole}</h3>
             <form onSubmit={handleApplicationSubmit} className="form">
-              <input type="text" placeholder={t("your_name")} required />
-              <input type="email" placeholder={t("your_email")} required />
-              <textarea placeholder={t("cover_letter")} required></textarea>
+              <input type="text" placeholder={t("your_name") as string} required />
+              <input type="email" placeholder={t("your_email") as string} required />
+              <textarea placeholder={t("cover_letter") as string} required></textarea>
 
-              <label>{t("upload resume")}</label>
+              <label>{t("upload resume") as string}</label>
               <input type="file" accept=".pdf,.doc,.docx" onChange={() => setSelectedResume("uploaded")} />
 
-              <label>{t("select resume")}</label>
+              <label>{t("select resume") as string}</label>
               <select value={selectedResume} onChange={(e) => setSelectedResume(e.target.value)}>
-                <option value="">{t("choose resume")}</option>
+                <option value="">{t("choose resume") as string}</option>
                 {resumes.length > 0 ? (
                   resumes.map((res) => (
                     <option key={res.id} value={res.id}>
@@ -192,14 +191,14 @@ const Internships: React.FC = () => {
                     </option>
                   ))
                 ) : (
-                  <option value="">{t("no resumes saved")}</option>
+                  <option value="">{t("no resumes saved") as string}</option>
                 )}
               </select>
 
               <div className="form-actions">
-                <button type="submit" className="btn">{t("submit")}</button>
+                <button type="submit" className="btn">{t("submit") as string}</button>
                 <button type="button" className="btn cancel" onClick={() => setShowForm(false)}>
-                  {t("cancel")}
+                  {t("cancel") as string}
                 </button>
               </div>
             </form>
@@ -211,18 +210,18 @@ const Internships: React.FC = () => {
       {showPostForm && (
         <div className="modal-overlay">
           <div className="modal post-modal">
-            <h3>{t("POST INTERNSHIP")}</h3>
+            <h3>{t("POST INTERNSHIP") as string}</h3>
             <form onSubmit={handlePostSubmit} className="form">
-              <input type="text" placeholder={t("internship_title")} value={newInternship.title} onChange={(e) => setNewInternship({ ...newInternship, title: e.target.value })} required />
-              <input type="text" placeholder={t("company_name")} value={newInternship.company} onChange={(e) => setNewInternship({ ...newInternship, company: e.target.value })} required />
-              <input type="text" placeholder={t("location")} value={newInternship.location} onChange={(e) => setNewInternship({ ...newInternship, location: e.target.value })} required />
-              <input type="text" placeholder={t("stipend")} value={newInternship.stipend} onChange={(e) => setNewInternship({ ...newInternship, stipend: e.target.value })} required />
-              <input type="text" placeholder={t("type_placeholder")} value={newInternship.type} onChange={(e) => setNewInternship({ ...newInternship, type: e.target.value })} required />
-              <textarea placeholder={t("responsibilities")} value={newInternship.responsibilities} onChange={(e) => setNewInternship({ ...newInternship, responsibilities: e.target.value })} required></textarea>
+              <input type="text" placeholder={t("internship_title") as string} value={newInternship.title} onChange={(e) => setNewInternship({ ...newInternship, title: e.target.value })} required />
+              <input type="text" placeholder={t("company_name") as string} value={newInternship.company} onChange={(e) => setNewInternship({ ...newInternship, company: e.target.value })} required />
+              <input type="text" placeholder={t("location") as string} value={newInternship.location} onChange={(e) => setNewInternship({ ...newInternship, location: e.target.value })} required />
+              <input type="text" placeholder={t("stipend") as string} value={newInternship.stipend} onChange={(e) => setNewInternship({ ...newInternship, stipend: e.target.value })} required />
+              <input type="text" placeholder={t("type_placeholder") as string} value={newInternship.type} onChange={(e) => setNewInternship({ ...newInternship, type: e.target.value })} required />
+              <textarea placeholder={t("responsibilities") as string} value={newInternship.responsibilities} onChange={(e) => setNewInternship({ ...newInternship, responsibilities: e.target.value })} required></textarea>
               <div className="form-actions">
-                <button type="submit" className="btn">{t("post")}</button>
+                <button type="submit" className="btn">{t("post") as string}</button>
                 <button type="button" className="btn cancel" onClick={() => setShowPostForm(false)}>
-                  {t("cancel")}
+                  {t("cancel") as string}
                 </button>
               </div>
             </form>

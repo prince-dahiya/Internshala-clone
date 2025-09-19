@@ -24,7 +24,6 @@ const Login: React.FC = () => {
       navigate("/profile");
     } else {
       // ❌ Login failed or OTP required
-      // If backend flagged requireOtp, show OTP field
       setRequireOtp(true);
     }
   };
@@ -32,11 +31,11 @@ const Login: React.FC = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2 className="auth-title">{t("LOGIN")}</h2>
+        <h2 className="auth-title">{t("LOGIN") as string}</h2>
         <form onSubmit={handleSubmit} className="auth-form">
           <input
             type="email"
-            placeholder={t("email")}
+            placeholder={t("email") as string}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="auth-input"
@@ -44,7 +43,7 @@ const Login: React.FC = () => {
           />
           <input
             type="password"
-            placeholder={t("password")}
+            placeholder={t("password") as string}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="auth-input"
@@ -64,16 +63,16 @@ const Login: React.FC = () => {
           )}
 
           <button type="submit" className="auth-btn">
-            {requireOtp ? "Verify OTP & Login" : t("login")}
+            {requireOtp ? "Verify OTP & Login" : (t("login") as string)}
           </button>
         </form>
 
         <p className="auth-footer">
-          <a href="/task2">{t("forgot_password")}</a>
+          <a href="/task2">{t("forgot_password") as string}</a>
         </p>
 
         <p className="auth-footer">
-          {t("new_here")} <a href="/signup">{t("create_account")}</a>
+          {t("new_here") as string} <a href="/signup">{t("create_account") as string}</a>
         </p>
       </div>
     </div>

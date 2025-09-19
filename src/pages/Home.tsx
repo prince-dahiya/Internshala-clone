@@ -7,6 +7,9 @@ const Home: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { t } = useTranslation();
 
+  // ✅ helper so we don’t need to cast everywhere
+  const tr = (key: string) => t(key) as string;
+
   const handleApply = (role: string) => {
     setSelectedRole(role);
     setShowForm(true);
@@ -14,7 +17,7 @@ const Home: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert(t("application submitted"));
+    alert(tr("application_submitted"));
     setShowForm(false);
   };
 
@@ -80,16 +83,16 @@ const Home: React.FC = () => {
     <div className="home">
       {/* Hero Section */}
       <div className="hero">
-        <h1>{t("hero_title")}</h1>
-        <p>{t("hero_subtitle")}</p>
+        <h1>{tr("hero_title")}</h1>
+        <p>{tr("hero_subtitle")}</p>
         <div className="hero-search">
           <input
             type="text"
-            placeholder={t("search_placeholder")}
+            placeholder={tr("search_placeholder")}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button>{t("search")}</button>
+          <button>{tr("search")}</button>
         </div>
       </div>
 
@@ -97,20 +100,20 @@ const Home: React.FC = () => {
       {searchQuery && (
         <section className="section">
           <h2>
-            {t("search_results")} "{searchQuery}"
+            {tr("search_results")} "{searchQuery}"
           </h2>
 
           {/* Internships */}
           {filteredInternships.length > 0 && (
             <>
-              <h3>{t("internships")}</h3>
+              <h3>{tr("internships")}</h3>
               <div className="card-grid">
                 {filteredInternships.map((i, idx) => (
                   <div className="card" key={idx}>
                     <h3>{i.title}</h3>
-                    <p>{t("company")}: {i.company}</p>
-                    <p>{t("location")}: {i.location}</p>
-                    <button onClick={() => handleApply(i.title)}>{t("apply")}</button>
+                    <p>{tr("company")}: {i.company}</p>
+                    <p>{tr("location")}: {i.location}</p>
+                    <button onClick={() => handleApply(i.title)}>{tr("apply")}</button>
                   </div>
                 ))}
               </div>
@@ -120,14 +123,14 @@ const Home: React.FC = () => {
           {/* Jobs */}
           {filteredJobs.length > 0 && (
             <>
-              <h3>{t("jobs")}</h3>
+              <h3>{tr("jobs")}</h3>
               <div className="card-grid">
                 {filteredJobs.map((j, idx) => (
                   <div className="card" key={idx}>
                     <h3>{j.title}</h3>
-                    <p>{t("company")}: {j.company}</p>
-                    <p>{t("location")}: {j.location}</p>
-                    <button onClick={() => handleApply(j.title)}>{t("apply")}</button>
+                    <p>{tr("company")}: {j.company}</p>
+                    <p>{tr("location")}: {j.location}</p>
+                    <button onClick={() => handleApply(j.title)}>{tr("apply")}</button>
                   </div>
                 ))}
               </div>
@@ -137,14 +140,14 @@ const Home: React.FC = () => {
           {/* Hackathons */}
           {filteredHackathons.length > 0 && (
             <>
-              <h3>{t("hackathons")}</h3>
+              <h3>{tr("hackathons")}</h3>
               <div className="card-grid">
                 {filteredHackathons.map((h, idx) => (
                   <div className="card" key={idx}>
                     <h3>{h.title}</h3>
-                    <p>{t("organized_by")}: {h.org}</p>
-                    <p>{t("mode")}: {h.mode}</p>
-                    <button onClick={() => handleApply(h.title)}>{t("register")}</button>
+                    <p>{tr("organized_by")}: {h.org}</p>
+                    <p>{tr("mode")}: {h.mode}</p>
+                    <button onClick={() => handleApply(h.title)}>{tr("register")}</button>
                   </div>
                 ))}
               </div>
@@ -154,12 +157,12 @@ const Home: React.FC = () => {
           {/* Ideas */}
           {filteredIdeas.length > 0 && (
             <>
-              <h3>{t("ideas")}</h3>
+              <h3>{tr("ideas")}</h3>
               <div className="card-grid">
                 {filteredIdeas.map((id, idx) => (
                   <div className="card" key={idx}>
                     <h3>{id.title}</h3>
-                    <p>{t("by")}: {id.by}</p>
+                    <p>{tr("by")}: {id.by}</p>
                   </div>
                 ))}
               </div>
@@ -172,54 +175,54 @@ const Home: React.FC = () => {
       {!searchQuery && (
         <>
           <section className="section">
-            <h2>{t("featured_internships")}</h2>
+            <h2>{tr("Internships")}</h2>
             <div className="card-grid">
               {internships.map((i, idx) => (
                 <div className="card" key={idx}>
                   <h3>{i.title}</h3>
-                  <p>{t("company")}: {i.company}</p>
-                  <p>{t("location")}: {i.location}</p>
-                  <button onClick={() => handleApply(i.title)}>{t("apply")}</button>
+                  <p>{tr("company")}: {i.company}</p>
+                  <p>{tr("location")}: {i.location}</p>
+                  <button onClick={() => handleApply(i.title)}>{tr("apply")}</button>
                 </div>
               ))}
             </div>
           </section>
 
           <section className="section">
-            <h2>{t("latest_jobs")}</h2>
+            <h2>{tr("latest jobs")}</h2>
             <div className="card-grid">
               {jobs.map((j, idx) => (
                 <div className="card" key={idx}>
                   <h3>{j.title}</h3>
-                  <p>{t("company")}: {j.company}</p>
-                  <p>{t("location")}: {j.location}</p>
-                  <button onClick={() => handleApply(j.title)}>{t("apply")}</button>
+                  <p>{tr("company")}: {j.company}</p>
+                  <p>{tr("location")}: {j.location}</p>
+                  <button onClick={() => handleApply(j.title)}>{tr("apply")}</button>
                 </div>
               ))}
             </div>
           </section>
 
           <section className="section">
-            <h2>{t("upcoming_hackathons")}</h2>
+            <h2>{tr("upcoming hackathons")}</h2>
             <div className="card-grid">
               {hackathons.map((h, idx) => (
                 <div className="card" key={idx}>
                   <h3>{h.title}</h3>
-                  <p>{t("organized_by")}: {h.org}</p>
-                  <p>{t("mode")}: {h.mode}</p>
-                  <button onClick={() => handleApply(h.title)}>{t("register")}</button>
+                  <p>{tr("organized_by")}: {h.org}</p>
+                  <p>{tr("mode")}: {h.mode}</p>
+                  <button onClick={() => handleApply(h.title)}>{tr("register")}</button>
                 </div>
               ))}
             </div>
           </section>
 
           <section className="section">
-            <h2>{t("student_ideas")}</h2>
+            <h2>{tr("student_ideas")}</h2>
             <div className="card-grid">
               {ideas.map((id, idx) => (
                 <div className="card" key={idx}>
                   <h3>{id.title}</h3>
-                  <p>{t("by")}: {id.by}</p>
+                  <p>{tr("by")}: {id.by}</p>
                 </div>
               ))}
             </div>
@@ -231,20 +234,20 @@ const Home: React.FC = () => {
       {showForm && (
         <div className="modal-overlay">
           <div className="modal">
-            <h3>{t("apply_register")} {selectedRole}</h3>
+            <h3>{tr("apply_register")} {selectedRole}</h3>
             <form onSubmit={handleSubmit}>
-              <input type="text" placeholder={t("your_name")} required />
-              <input type="email" placeholder={t("your_email")} required />
-              <textarea placeholder={t("cover_letter")} required></textarea>
+              <input type="text" placeholder={tr("your_name")} required />
+              <input type="email" placeholder={tr("your_email")} required />
+              <textarea placeholder={tr("cover_letter")} required></textarea>
               <input type="file" accept=".pdf,.doc,.docx" required />
               <div className="form-actions">
-                <button type="submit" className="btn">{t("submit")}</button>
+                <button type="submit" className="btn">{tr("submit")}</button>
                 <button
                   type="button"
                   className="btn cancel"
                   onClick={() => setShowForm(false)}
                 >
-                  {t("cancel")}
+                  {tr("cancel")}
                 </button>
               </div>
             </form>

@@ -12,24 +12,32 @@ const Ideas: React.FC = () => {
 
   const [ideas, setIdeas] = useState<Idea[]>([
     {
-      title: t("AI-powered Resume Builder"),
-      author: t("Priya Sharma"),
-      description: t("This project uses AI to help job seekers create professional resumes instantly."),
+      title: t("AI-powered Resume Builder") as string,
+      author: t("Priya Sharma") as string,
+      description: t(
+        "This project uses AI to help job seekers create professional resumes instantly."
+      ) as string,
     },
     {
-      title: t("Blockchain Voting System"),
-      author: t("Rahul Verma"),
-      description: t("A secure blockchain-based platform for conducting transparent elections."),
+      title: t("Blockchain Voting System") as string,
+      author: t("Rahul Verma") as string,
+      description: t(
+        "A secure blockchain-based platform for conducting transparent elections."
+      ) as string,
     },
     {
-      title: t("Green Energy Tracker"),
-      author: t("Ananya Singh"),
-      description: t("Track & analyze renewable energy consumption in households and industries."),
+      title: t("Green Energy Tracker") as string,
+      author: t("Ananya Singh") as string,
+      description: t(
+        "Track & analyze renewable energy consumption in households and industries."
+      ) as string,
     },
     {
-      title: t("Smart Campus App"),
-      author: t("Karan Mehta"),
-      description: t("An app for managing campus events, assignments, and student communities."),
+      title: t("Smart Campus App") as string,
+      author: t("Karan Mehta") as string,
+      description: t(
+        "An app for managing campus events, assignments, and student communities."
+      ) as string,
     },
   ]);
 
@@ -52,9 +60,9 @@ const Ideas: React.FC = () => {
 
   return (
     <div className="page">
-      <h1 className="page-title">{t("Student Ideas")}</h1>
+      <h1 className="page-title">{t("Student Ideas") as string}</h1>
       <p className="page-subtitle">
-        {t("Explore innovative ideas submitted by students & young innovators.")}
+        {t("Explore innovative ideas submitted by students & young innovators.") as string}
       </p>
 
       <div className="card-grid">
@@ -62,7 +70,7 @@ const Ideas: React.FC = () => {
           <div className="card" key={idx}>
             <h2>{idea.title}</h2>
             <p>
-              <strong>{t("By:")}</strong> {idea.author}
+              <strong>{t("By:") as string}</strong> {idea.author}
             </p>
             <p>{idea.description}</p>
           </div>
@@ -72,7 +80,7 @@ const Ideas: React.FC = () => {
       {/* Button to submit new idea */}
       <div style={{ marginTop: "30px" }}>
         <button className="btn apply-btn" onClick={() => setShowForm(true)}>
-          {t("+ Submit Your Idea")}
+          {t("+ Submit Your Idea") as string}
         </button>
       </div>
 
@@ -80,10 +88,10 @@ const Ideas: React.FC = () => {
       {showForm && (
         <div className="modal-overlay">
           <div className="modal">
-            <h2>{t("Submit a New Idea")}</h2>
+            <h2>{t("Submit a New Idea") as string}</h2>
             <form onSubmit={handleAddIdea}>
               <label>
-                {t("Title")}
+                {t("Title") as string}
                 <input
                   type="text"
                   value={newIdea.title}
@@ -92,7 +100,7 @@ const Ideas: React.FC = () => {
                 />
               </label>
               <label>
-                {t("Your Name")}
+                {t("Your Name") as string}
                 <input
                   type="text"
                   value={newIdea.author}
@@ -101,7 +109,7 @@ const Ideas: React.FC = () => {
                 />
               </label>
               <label>
-                {t("Description")}
+                {t("Description") as string}
                 <textarea
                   value={newIdea.description}
                   onChange={(e) => setNewIdea({ ...newIdea, description: e.target.value })}
@@ -110,14 +118,14 @@ const Ideas: React.FC = () => {
               </label>
               <div className="form-actions">
                 <button type="submit" className="btn apply-btn">
-                  {t("Add Idea")}
+                  {t("Add Idea") as string}
                 </button>
                 <button
                   type="button"
                   className="btn cancel-btn"
                   onClick={() => setShowForm(false)}
                 >
-                  {t("Cancel")}
+                  {t("Cancel") as string}
                 </button>
               </div>
             </form>

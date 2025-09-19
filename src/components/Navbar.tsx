@@ -42,9 +42,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentLang, setLang }) => {
           <div className="dropdown-content">
             <Link to="/task1">Task 1</Link>
             <Link to="/task2">Task 2</Link>
-            <Link to="/task3">Task 3</Link>
+            
             {user && <Link to="/task4resume">Task 4 - {t("resume_creator")}</Link>}
-            <Link to="/task5">Task 5</Link>
+            
             {user && <Link to="/task6">Task 6</Link>}
             <Link to="/subscription">{t("subscription")}</Link>
           </div>

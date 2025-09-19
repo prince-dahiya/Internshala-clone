@@ -101,14 +101,14 @@ const Signup = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2 className="auth-title">{t("create_account")}</h2>
+        <h2 className="auth-title">{t("create_account") as string}</h2>
 
         {/* Signup form */}
         <form onSubmit={handleSignup} className="auth-form">
           <input
             type="text"
             name="name"
-            placeholder={t("full_name")}
+            placeholder={t("full_name") as string}
             value={formData.name}
             onChange={handleChange}
             className="auth-input"
@@ -117,7 +117,7 @@ const Signup = () => {
           <input
             type="email"
             name="email"
-            placeholder={t("email")}
+            placeholder={t("email") as string}
             value={formData.email}
             onChange={handleChange}
             className="auth-input"
@@ -126,7 +126,7 @@ const Signup = () => {
           <input
             type="tel"
             name="phone"
-            placeholder={t("phone")}
+            placeholder={t("phone") as string}
             value={formData.phone}
             onChange={handleChange}
             className="auth-input"
@@ -134,7 +134,7 @@ const Signup = () => {
           <input
             type="password"
             name="password"
-            placeholder={t("password")}
+            placeholder={t("password") as string}
             value={formData.password}
             onChange={handleChange}
             className="auth-input"
@@ -158,7 +158,7 @@ const Signup = () => {
             onClick={requireOtp ? handleVerifyOtp : undefined}
             className="auth-btn"
           >
-            {requireOtp ? "Verify OTP" : t("signup")}
+            {requireOtp ? "Verify OTP" : (t("signup") as string)}
           </button>
         </form>
 
@@ -170,7 +170,8 @@ const Signup = () => {
         )}
 
         <p className="auth-footer">
-          {t("already_have_account")} <a href="/login">{t("login_here")}</a>
+          {t("already_have_account") as string}{" "}
+          <a href="/login">{t("login_here") as string}</a>
         </p>
       </div>
     </div>

@@ -1,3 +1,4 @@
+// src/i18n.ts
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
@@ -15,6 +16,8 @@ const resources = {
       signup: "Sign Up",
       tasks: "Tasks",
       subscribe: "Subscribe",
+      signing: "Signing",
+      resume_creator: "Resume Creator",
 
       // Hero
       hero_title: "Discover Opportunities That Fit You",
@@ -42,12 +45,31 @@ const resources = {
       to_your_profile: "to your profile",
       logout: "Logout",
       Subscriptions_taken: "Subscriptions taken",
+      subscription_title: "Subscription Details",
       plan: "Plan",
       applications_limit: "Applications Limit",
       start_date: "Start Date",
       expiry_date: "Expiry Date",
       no_active_subscription: "You don’t have any active subscriptions right now",
       no_applications: "You haven’t applied for anything yet",
+
+      // Modal / Forms
+      apply_register: "Apply/Register",
+      your_name: "Your Name",
+      your_email: "Your Email",
+      cover_letter: "Cover Letter",
+      submit: "Submit",
+      cancel: "Cancel",
+      add_idea: "Add Idea",
+      submit_your_idea: "+ Submit Your Idea",
+      submit_new_idea: "Submit a New Idea",
+      description: "Description",
+
+      // Sections
+      featured_internships: "Featured Internships",
+      latest_jobs: "Latest Jobs",
+      upcoming_hackathons: "Upcoming Hackathons",
+      student_ideas: "Student Ideas",
 
       // Alerts & Messages
       please_login: "Please log in to continue",
@@ -71,6 +93,8 @@ const resources = {
       signup: "साइन अप",
       tasks: "कार्य",
       subscribe: "सदस्यता",
+      signing: "साइनिंग",
+      resume_creator: "रिज़्यूमे क्रिएटर",
 
       hero_title: "अपने लिए सही अवसर खोजें",
       hero_subtitle: "इंटर्नशिप, नौकरियां, हैकाथॉन और बहुत कुछ पाएं",
@@ -95,12 +119,29 @@ const resources = {
       to_your_profile: "आपकी प्रोफ़ाइल में",
       logout: "लॉगआउट",
       Subscriptions_taken: "ली गई सदस्यताएँ",
+      subscription_title: "सदस्यता विवरण",
       plan: "प्लान",
       applications_limit: "आवेदन सीमा",
       start_date: "प्रारंभ तिथि",
       expiry_date: "समाप्ति तिथि",
       no_active_subscription: "आपके पास कोई सक्रिय सदस्यता नहीं है",
       no_applications: "आपने अभी तक किसी भी चीज़ के लिए आवेदन नहीं किया है",
+
+      apply_register: "आवेदन/रजिस्टर करें",
+      your_name: "आपका नाम",
+      your_email: "आपका ईमेल",
+      cover_letter: "कवर लेटर",
+      submit: "सबमिट करें",
+      cancel: "रद्द करें",
+      add_idea: "विचार जोड़ें",
+      submit_your_idea: "+ अपना विचार प्रस्तुत करें",
+      submit_new_idea: "नया विचार प्रस्तुत करें",
+      description: "विवरण",
+
+      featured_internships: "प्रमुख इंटर्नशिप",
+      latest_jobs: "नवीनतम नौकरियां",
+      upcoming_hackathons: "आगामी हैकाथॉन",
+      student_ideas: "छात्रों के विचार",
 
       please_login: "जारी रखने के लिए कृपया लॉगिन करें",
       need_subscription: "आवेदन करने के लिए आपको एक सक्रिय सदस्यता चाहिए",
@@ -123,6 +164,8 @@ const resources = {
       signup: "Registrarse",
       tasks: "Tareas",
       subscribe: "Suscribirse",
+      signing: "Firmando",
+      resume_creator: "Creador de Currículum",
 
       hero_title: "Descubre oportunidades que se adapten a ti",
       hero_subtitle: "Encuentra pasantías, trabajos, hackatones y más",
@@ -147,12 +190,29 @@ const resources = {
       to_your_profile: "a tu perfil",
       logout: "Cerrar sesión",
       Subscriptions_taken: "Suscripciones tomadas",
+      subscription_title: "Detalles de Suscripción",
       plan: "Plan",
       applications_limit: "Límite de solicitudes",
       start_date: "Fecha de inicio",
       expiry_date: "Fecha de vencimiento",
       no_active_subscription: "No tienes suscripciones activas",
       no_applications: "Aún no has solicitado nada",
+
+      apply_register: "Aplicar/Registrarse",
+      your_name: "Tu nombre",
+      your_email: "Tu correo electrónico",
+      cover_letter: "Carta de presentación",
+      submit: "Enviar",
+      cancel: "Cancelar",
+      add_idea: "Agregar Idea",
+      submit_your_idea: "+ Enviar tu Idea",
+      submit_new_idea: "Enviar una Nueva Idea",
+      description: "Descripción",
+
+      featured_internships: "Prácticas Destacadas",
+      latest_jobs: "Últimos Trabajos",
+      upcoming_hackathons: "Hackatones Próximos",
+      student_ideas: "Ideas de Estudiantes",
 
       please_login: "Por favor inicia sesión para continuar",
       need_subscription: "Necesitas una suscripción activa para postularte",
@@ -175,6 +235,8 @@ const resources = {
       signup: "Cadastrar",
       tasks: "Tarefas",
       subscribe: "Inscrever-se",
+      signing: "Assinando",
+      resume_creator: "Criador de Currículo",
 
       hero_title: "Descubra oportunidades que combinam com você",
       hero_subtitle: "Encontre estágios, empregos, hackathons e mais",
@@ -199,12 +261,29 @@ const resources = {
       to_your_profile: "ao seu perfil",
       logout: "Sair",
       Subscriptions_taken: "Assinaturas feitas",
+      subscription_title: "Detalhes da Assinatura",
       plan: "Plano",
       applications_limit: "Limite de candidaturas",
       start_date: "Data de início",
       expiry_date: "Data de expiração",
       no_active_subscription: "Você não tem assinaturas ativas",
       no_applications: "Você ainda não se candidatou a nada",
+
+      apply_register: "Aplicar/Registrar-se",
+      your_name: "Seu Nome",
+      your_email: "Seu Email",
+      cover_letter: "Carta de Apresentação",
+      submit: "Enviar",
+      cancel: "Cancelar",
+      add_idea: "Adicionar Ideia",
+      submit_your_idea: "+ Enviar sua Ideia",
+      submit_new_idea: "Enviar Nova Ideia",
+      description: "Descrição",
+
+      featured_internships: "Estágios em Destaque",
+      latest_jobs: "Últimos Empregos",
+      upcoming_hackathons: "Hackathons Futuros",
+      student_ideas: "Ideias de Estudantes",
 
       please_login: "Por favor faça login para continuar",
       need_subscription: "Você precisa de uma assinatura ativa para se candidatar",
@@ -227,6 +306,8 @@ const resources = {
       signup: "注册",
       tasks: "任务",
       subscribe: "订阅",
+      signing: "登录中",
+      resume_creator: "简历生成器",
 
       hero_title: "发现适合你的机会",
       hero_subtitle: "寻找实习、工作、黑客马拉松等",
@@ -251,6 +332,7 @@ const resources = {
       to_your_profile: "来到你的个人资料",
       logout: "退出登录",
       Subscriptions_taken: "已订阅",
+      subscription_title: "订阅详情",
       plan: "套餐",
       applications_limit: "申请上限",
       start_date: "开始日期",
@@ -258,9 +340,25 @@ const resources = {
       no_active_subscription: "你目前没有任何有效订阅",
       no_applications: "你还没有申请过任何职位",
 
+      apply_register: "申请/注册",
+      your_name: "你的名字",
+      your_email: "你的邮箱",
+      cover_letter: "求职信",
+      submit: "提交",
+      cancel: "取消",
+      add_idea: "添加创意",
+      submit_your_idea: "+ 提交你的创意",
+      submit_new_idea: "提交新创意",
+      description: "描述",
+
+      featured_internships: "精选实习",
+      latest_jobs: "最新工作",
+      upcoming_hackathons: "即将到来的黑客马拉松",
+      student_ideas: "学生创意",
+
       please_login: "请先登录以继续",
-      need_subscription: "你需要一个有效的订阅才能申请",
-      subscription_expired: "你的订阅已过期，请续费。",
+      need_subscription: "你需要一个有效订阅才能申请",
+      subscription_expired: "你的订阅已过期，请续费",
       limit_reached: "你已达到订阅计划的申请上限",
       resume_required: "请在申请前上传或选择一份简历",
       application_submitted: "你的申请已成功提交！",
@@ -270,7 +368,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en", // default
+  lng: "en", // Default language
   interpolation: { escapeValue: false },
 });
 
